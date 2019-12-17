@@ -26,15 +26,15 @@ class Me(viewsets.ModelViewSet):
         return queryset
 
 
-@api_view(['POST'])
+@api_view(["POST"])
 @permission_classes((permissions.AllowAny,))
 def create_auth(request):
-    serialized = UserCreateSerializer(data=request.data, context={'request': request})
+    serialized = UserCreateSerializer(data=request.data, context={"request": request})
     if serialized.is_valid():
         User.objects.create_user(
-            serialized.data['username'],
-            serialized.data['email'],
-            serialized.data['password']
+            serialized.data["username"],
+            serialized.data["email"],
+            serialized.data["password"],
         )
         return Response(serialized.data, status=status.HTTP_201_CREATED)
     else:

@@ -8,4 +8,7 @@ router = routers.DefaultRouter()
 router.register(r"me", Me)
 router.register(r"", UserViewSet)
 
-urlpatterns = [path("register/", create_auth, name="register"), path("", include(router.urls))]
+urlpatterns = [
+    path("register/", create_auth, name="register"),
+    path("", include(router.urls)),
+]

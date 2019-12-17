@@ -23,7 +23,7 @@ class PostAPITests(APITestCase):
         Post.objects.create(user=user, message="Hello, world!")
 
     def test_get_posts(self):
-        url = reverse('post-list')
+        url = reverse("post-list")
         response = self.client.get(url, format="json")
         self.assertEqual(response.data[1]["message"], "Hello, universe!")
         self.assertEqual(response.data[0]["message"], "Hello, world!")
