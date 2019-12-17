@@ -30,7 +30,6 @@ class Me(viewsets.ModelViewSet):
 @permission_classes((permissions.AllowAny,))
 def create_auth(request):
     serialized = UserCreateSerializer(data=request.data, context={'request': request})
-    print(serialized)
     if serialized.is_valid():
         User.objects.create_user(
             serialized.data['username'],
