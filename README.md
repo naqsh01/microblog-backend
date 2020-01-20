@@ -42,6 +42,10 @@ User your superuser account to login
 
 ## Necessary configuration
 
-| Environment variable | Options | Default | Description |
+| Environment variable | Options/Type | Default | Description |
 | --- | --- | --- | --- |
 | DEBUG | True/False | True | Enables or disables Django debug mode |
+| DB_NAME | String | postgres | Database name |
+| DB_USER | String | postgres | Database user's name |
+| DB_PASS | String | postgres | Database user's password |
+| DB_PORT | String | postgres | Database port number |
