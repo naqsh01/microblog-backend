@@ -49,3 +49,18 @@ User your superuser account to login
 | DB_USER | String | postgres | Database user's name |
 | DB_PASS | String | postgres | Database user's password |
 | DB_PORT | String | postgres | Database port number |
+
+## Deploying with Helm
+
+In order to deploy this application with Helm you'll need to update a few fields either with a custom values.yaml file or passed in on the cli.
+
+### Example deploy
+
+You'll need to update all of these fields with your own values.
+
+```shell
+helm upgrade --install microblog-backend ./chart \
+  --set hostname=backend.example.com \
+  --set image.repository=gcr.io/my_registry/backend \
+  --set image.tag=asd9f8
+```
