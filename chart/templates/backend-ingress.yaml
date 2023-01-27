@@ -11,7 +11,7 @@ spec:
         paths:
           - path: /
             backend:
-              service
+              service:
                 name: microblog-backend
                 port: 
                   number: 80
